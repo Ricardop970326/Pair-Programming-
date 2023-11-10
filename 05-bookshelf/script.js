@@ -8,8 +8,9 @@ class bookshelf{
     }
 
 
-    removeBook(title) {
-        this.Books = this.Books.filter( book => book.title !== title );
+    
+    removeBook(title) {  
+        this.Books = this.Books.filter( books => books.title !== title );
       }
 
       getTotalBooks() {
@@ -26,5 +27,8 @@ console.log(theBookshelf);
 console.log(theBookshelf.getTotalBooks());
 
 theBookshelf.removeBook("To Kill a Mockingbird");
+
+console.log(theBookshelf);
+
 
 console.log(theBookshelf.getTotalBooks());
