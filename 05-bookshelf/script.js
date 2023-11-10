@@ -1,13 +1,30 @@
 class bookshelf{
     constructor(){
-        var Books = bookName;
+        this.Books = [];
     }
    
     addBook(bookName){
-        Books.push(bookName);
+        this.Books.push(bookName);
     }
+
+
+    removeBook(title) {
+        this.Books = this.Books.filter( book => book.title !== title );
+      }
+
+      getTotalBooks() {
+        return this.Books.length;
+      }
 }
 
-var Bookshelf = new bookshelf();
-Bookshelf.addBook('the great gatsby');
-console.log(Bookshelf);
+const theBookshelf = new bookshelf();
+theBookshelf.addBook("the great gatsby");
+theBookshelf.addBook("To Kill a Mockingbird");
+theBookshelf.addBook("Pride and Prejudice");
+console.log(theBookshelf);
+
+console.log(theBookshelf.getTotalBooks());
+
+theBookshelf.removeBook("To Kill a Mockingbird");
+
+console.log(theBookshelf.getTotalBooks());
